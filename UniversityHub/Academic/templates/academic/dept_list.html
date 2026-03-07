@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Course page {% endblock %}
+
+{% block content %}
+    <ul>
+        {% for department in departments %}
+            <li>
+                <strong>{{ department.name }}</strong>: {{ department.head_of_dept }}
+                 
+                <em>{{ department.description }}</em>
+            </li>
+        {% empty%}
+            <li>No departments found.</li>
+        {% endfor %}
+
+    </ul>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Course page {% endblock %}
+
+{% block content %}
+    <!-- <h1>{{ page_title}}</h1>
+    <ul>
+        {% for course in courses %}
+            <li>
+                <strong>{{ course.code }}</strong>: {{ course.name }}
+                ({{ course.credits }} Credits) -
+                <em>{{ course.department.name}}</em>
+            </li>
+        {% empty %}
+            <li>No courses found.</li>
+        {% endfor %}
+        </ul>  -->
+    <h2>Available Courses</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Name</th>
+                    <th>Department</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for course in courses %}
+                <tr>
+                    <td>{{ course.code }}</td>
+                    <td>{{ course.name }}</td>
+                    <td>{{ course.department.name }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endblock %}
