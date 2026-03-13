@@ -10,6 +10,14 @@
         <a href="/Academic/courses/">Courses</a>
         <a href="/Academic/departments/">Departments</a>
         <a href="/Academic/students/">Students</a> | <a href="/admin/">Admin</a>
+
+        {% if user.is_authenticated %}
+            <span>Welcome, {{ user.username }}!</span>
+            <!-- <a href="{% url 'logout' %}">Logout</a> -->
+             <from action = "{% url 'logout' %}" method = "post" style = "display: inline;">
+                {% csrf_token %}
+                <button type="submit">Logout</button>
+        {% endif %}
     </nav>
 
     <hr>
